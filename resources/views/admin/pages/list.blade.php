@@ -1,7 +1,7 @@
-@extends('layouts.public')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
-    welcome
+    mostrando listado
 </div>
 @endsection
