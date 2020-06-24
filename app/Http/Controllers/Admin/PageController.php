@@ -18,4 +18,8 @@ class PageController extends Controller
         return view('admin.pages.list')
                 ->with('pages', Page::paginate(10));
     }
+
+    public function add(){
+        return view('admin.pages.add');
+    }
 }
