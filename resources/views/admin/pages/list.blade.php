@@ -3,23 +3,25 @@
 @section('content')
 <div class="container">
     <a href="{{ route('admin.pages.add') }}" class="btn btn-primary">Añadir pagina</a>
-    Listado de publicaciones
+    <div class="text-center p-4">
+    <h1>Listado de paginas</h1>
+    </div>
     <table class="table">
         <thead>
             <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Url</th>
+            <th scope="col"></th>
             </tr>
         </thead>
         @forelse ($pages as $page)
         <tbody>
             <tr>
             <th scope="row">{{$page->id}}</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{{$page->name}}</td>
+            <td>{{$page->slug}}</td>
+            <td>editar</td>
             </tr>
         </tbody>
         @empty

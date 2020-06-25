@@ -22,4 +22,22 @@ class PageController extends Controller
     public function add(){
         return view('admin.pages.add');
     }
+
+    public function store(Request $request){
+
+        $request->validate([
+            'name' => 'required|min:1|max:255',
+            'slug' => 'required|min:1|max:255',
+            'content' => 'required|min:1|max:10000',
+        ]);
+
+        $page = new Page;
+        $page->name = $request->name;
+        $page->slug = $request->slug;
+        $page->content = $request->content;
+        $page->status = 0;
+        $page->save();
+
+        return redirect()->route('admin.pages.list');
+    }
 }

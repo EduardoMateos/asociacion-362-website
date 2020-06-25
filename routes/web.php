@@ -26,5 +26,6 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
     Route::group(['prefix' => 'pages', 'as'=>'pages.'], function () {
         Route::get('', 'Admin\PageController@list')->name('list');
         Route::get('add', 'Admin\PageController@add')->name('add');
+        Route::post('post', 'Admin\PageController@store')->name('store');
     });
 });
