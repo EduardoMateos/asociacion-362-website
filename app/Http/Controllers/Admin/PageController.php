@@ -19,10 +19,21 @@ class PageController extends Controller
                 ->with('pages', Page::paginate(10));
     }
 
+    /**
+     * Muestra la vista de añadir pagina
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function add(){
         return view('admin.pages.add');
     }
 
+    /**
+     * Valida y almacena los datos de pagina
+     *
+     * @input Request
+     * @return redirect
+     */
     public function store(Request $request){
 
         $request->validate([
