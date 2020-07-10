@@ -2,10 +2,10 @@
 
 ## Sobre la web
 
-Web: https://www.scouts362.es
-Autor: Eduardo Mateos Soto
-Laravel 7.19
-Bootstrap 4.5
+- Web: https://www.scouts362.es
+- Autor: Eduardo Mateos Soto
+- Laravel 7.19
+- Bootstrap 4.5
 
 Eres libre de usar el código de este repositorio si te es útil.
 
