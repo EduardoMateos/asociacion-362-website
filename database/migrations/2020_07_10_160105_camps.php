@@ -15,7 +15,10 @@ class Camps extends Migration
     {
         Schema::create('camps', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('date');
             $table->string('name');
+            $table->string('slug');
+            $table->text('content');
             $table->string('description');
             $table->string('coorY');
             $table->string('coorZ');

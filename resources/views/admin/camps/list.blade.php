@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="panel-heading">Campateca</div>
 
                 <div class="panel-body">
-                  <a href="{{ route('addcampa')}}" class="btn btn-success">Añadir Campamento</a>
+                  <a href="{{ route('admin.camps.add')}}" class="btn btn-success">Añadir Campamento</a>
 
                   <div id="no-more-tables" style="padding-top:20px">
                       <table class="col-md-12 table-bordered table-striped table-condensed cf">
