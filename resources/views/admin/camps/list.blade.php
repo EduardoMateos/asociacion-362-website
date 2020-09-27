@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="panel-heading">Campateca</div>
 
                 <div class="panel-body">
-                  <a href="{{ route('addcampa')}}" class="btn btn-success">Añadir Campamento</a>
+                  <a href="{{ route('admin.camps.add')}}" class="btn btn-success">Añadir Campamento</a>
 
                   <div id="no-more-tables" style="padding-top:20px">
                       <table class="col-md-12 table-bordered table-striped table-condensed cf">
@@ -25,7 +25,7 @@
                           <td data-title="ID">{{ $item->id }}</td>
                           <td data-title="Nombre">{{ $item->name }}</td>
                           <td data-title="Acción">
-                            <a href="{{ route('editcampa',$item->id) }}" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a href="{{ route('admin.camps.edit',$item->id) }}" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <button onclick="changeLink({{ $item->id }})" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                           </td>
                         </tr>

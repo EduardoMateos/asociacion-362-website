@@ -9,7 +9,7 @@
                 <div class="panel-heading">Añadir campamento a la Campateca</div>
 
                 <div class="panel-body">
-                  <form method="POST" action="{{ route('storecampa')}}">
+                  <form method="POST" action="{{ route('admin.camps.store')}}">
                      {{ csrf_field() }}
                     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                       <label>Nombre</label>
@@ -41,12 +41,12 @@
                       <input type="text" name="description" class="form-control" value="{{ old('description') }}">
                       <span class="text-danger">{{ $errors->first('description') }}</span>
                     </div>
-                    <div class="form-group {{ $errors->has('contenido') ? 'has-error' : '' }}">
+                    <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                       <label>Contenido largo</label>
-                      <textarea name="contenido" cols="30" rows="10" class="form-control">{{ old('contenido')}}</textarea>
-                      <span class="text-danger">{{ $errors->first('contenido') }}</span>
+                      <textarea name="content" cols="30" rows="10" class="form-control content">{{ old('content')}}</textarea>
+                      <span class="text-danger">{{ $errors->first('content') }}</span>
                     </div>
-                    <div align="center">
+                    <div class="text-center">
                      <button type="submit" class="btn btn-success">Enviar</button>
                    </div>
                   </form>
@@ -56,27 +56,43 @@
     </div>
 </div>
 
-@include('mceImageUpload::upload_form')
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
+
+<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 <script>
-$().ready(function () {
-tinymce.init({
-    selector: 'textarea',
-    height: 300,
-    theme: 'modern',
-    plugins: [
-        'image imagetools'
-    ],
-    toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-    relative_urls: false,
-    file_browser_callback: function(field_name, url, type, win) {
-        // trigger file upload form
-        if (type == 'image') $('#formUpload input').click();
-    }
-});
+    tinymce.init({
+        selector:'textarea.content',
+        height: 300,
+        plugins: [
+        'image code'
+        ],
+        toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image code',
+        images_upload_handler: function (blobInfo, success, failure) {
+           var xhr, formData;
+           xhr = new XMLHttpRequest();
+           xhr.withCredentials = false;
+           xhr.open('POST', '/admin/camps/image');
+           var token = '{{ csrf_token() }}';
+           xhr.setRequestHeader("X-CSRF-Token", token);
+           xhr.onload = function() {
+               var json;
+               if (xhr.status != 200) {
+                   failure('HTTP Error: ' + xhr.status);
+                   return;
+               }
+               json = JSON.parse(xhr.responseText);
 
-});
+               if (!json || typeof json.location != 'string') {
+                   failure('Invalid JSON: ' + xhr.responseText);
+                   return;
+               }
+               success(json.location);
+           };
+           formData = new FormData();
+           formData.append('file', blobInfo.blob(), blobInfo.filename());
+           xhr.send(formData);
+       }
+    });
 </script>
 @endsection

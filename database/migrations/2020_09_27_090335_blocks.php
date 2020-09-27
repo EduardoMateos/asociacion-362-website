@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Camps extends Migration
+class Blocks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,10 @@ class Camps extends Migration
      */
     public function up()
     {
-        Schema::create('camps', function (Blueprint $table) {
+        Schema::create('blocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('date');
             $table->string('name');
-            $table->string('slug');
             $table->text('content');
-            $table->string('description');
-            $table->string('coorY');
-            $table->string('coorZ');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ class Camps extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('camps');
+        Schema::dropIfExists('blocks');
     }
 }

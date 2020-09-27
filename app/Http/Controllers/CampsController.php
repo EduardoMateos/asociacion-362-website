@@ -8,7 +8,7 @@ use Seo;
 
 class CampsController extends Controller
 {
-    public function show(){
-        
+    public function show($slug){
+        dd($slug);
     }
 }
