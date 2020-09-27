@@ -1,6 +1,8 @@
 {
+    "/js/admin/app.js": "/js/admin/app.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/css/admin/app.css": "/css/admin/app.css",
     "/node_modules/tinymce/jquery.tinymce.js": "/node_modules/tinymce/jquery.tinymce.js",
     "/node_modules/tinymce/jquery.tinymce.min.js": "/node_modules/tinymce/jquery.tinymce.min.js",
     "/node_modules/tinymce/tinymce.js": "/node_modules/tinymce/tinymce.js",

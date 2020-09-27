@@ -25,7 +25,7 @@
                           <td data-title="ID">{{ $item->id }}</td>
                           <td data-title="Nombre">{{ $item->name }}</td>
                           <td data-title="Acción">
-                            <a href="{{ route('editcampa',$item->id) }}" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                            <a href="{{ route('admin.camps.edit',$item->id) }}" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                             <button onclick="changeLink({{ $item->id }})" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                           </td>
                         </tr>
