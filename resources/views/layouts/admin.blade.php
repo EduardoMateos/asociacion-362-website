@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -63,6 +64,22 @@
                                     </a>
                                     <a class="nav-link" href="{{route('admin.blocks.add')}}">
                                         Añadir bloque
+                                    </a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCamps" aria-expanded="false" aria-controls="collapseCamps">
+                                <div class="sb-nav-link-icon"><i class="far fa-comments"></i></div>
+                                Campateca
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseCamps" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="{{route('admin.camps.list')}}">
+                                        Mostrar listado
+                                    </a>
+                                    <a class="nav-link" href="{{route('admin.camps.add')}}">
+                                        Añadir campamento
                                     </a>
                                 </nav>
                             </div>

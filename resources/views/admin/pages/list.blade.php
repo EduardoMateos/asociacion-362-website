@@ -28,7 +28,7 @@
                         <th scope="row">{{$page->id}}</th>
                         <td>{{$page->name}}</td>
                         <td><a href="{{ route('showpage', $page->slug) }}" target="_blank">{{$page->slug}}</a></td>
-                        <td>editar</td>
+                        <td><a href="{{ route('admin.pages.edit',$page->id) }}" class="btn btn-info">Editar</a></td>
 					</tr>
 					@empty
                     <tr>

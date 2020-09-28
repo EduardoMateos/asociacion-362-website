@@ -13,12 +13,13 @@
 <body>
     <div id="app" class="container pt-3">
         <div class="text-center">
-            <img src="{{ asset('images/logo.png') }}" alt="logo">
+            <img src="{{ asset('images/logo.png') }}" alt="logo" class="img-fluid">
         </div>
         @include('layouts.parts.menu') 
 
         @yield('content')
- 
+
+        @include('layouts.parts.footer') 
     </div>
 </body>
 </html>
