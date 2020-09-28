@@ -28,19 +28,43 @@ class PageController extends Controller
         return view('admin.pages.add');
     }
 
+     /**
+     * Muestra el formulario para editar una pagina
+     *
+     * @input $id page
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function edit($id){
+        $page = Page::find($id);
+        if(!$page){
+            abort(404);
+        }
+        return view('admin.pages.edit')
+                    ->with('data', $page);
+    }
+
     /**
      * Valida y almacena los datos de pagina
      *
      * @input Request
      * @return redirect
      */
-    public function store(Request $request){
+    public function store(Request $request, $id){
 
         $request->validate([
             'name' => 'required|min:1|max:255',
             'slug' => 'required|min:1|max:255',
             'content' => 'required|min:1|max:10000',
         ]);
+
+        if($id != null){
+            $page = Page::find($id);
+            if(!$block){
+                $page = new Page;
+            }
+        }else{
+            $page = new Page;
+        }
 
         $page = new Page;
         $page->name = $request->name;

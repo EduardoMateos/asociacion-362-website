@@ -27,7 +27,7 @@
 					<tr>
                         <th scope="row">{{$block->id}}</th>
                         <td>{{$block->name}}</td>
-                        <td>editar</td>
+                        <td><a href="{{ route('admin.blocks.edit', $block->id) }}" class="btn btn-primary">Editar</a></td>
 					</tr>
 					@empty
                     <tr>

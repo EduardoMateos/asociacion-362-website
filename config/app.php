@@ -227,7 +227,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Seo' => App\Helpers\Seo::class,
+        'Seo' => App\Utils\Seo::class,
+        'Block' => App\Utils\Block::class,
     ],
 
 ];

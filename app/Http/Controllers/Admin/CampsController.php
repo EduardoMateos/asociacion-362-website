@@ -31,40 +31,6 @@ class CampsController extends Controller
             ->with('data', $data);
     }
 
-    public function storeeditcampa($id, Request $request){
-
-        $this->validate($request,[
-            'name' => 'required|min:3|max:255',
-            'description' => 'required|min:5|max:255',
-            'coorY' => 'required',
-            'coorZ' => 'required',
-            'contenido' => 'required',
-            'slug' => 'required'
-            ],[
-            'name.required' => 'El campo Nombre es obligatorio.',
-            'name.min' => 'El campo Nombre requiere minimo 3 caracteres.',
-            'name.max' => 'El campo Nombre tiene como limite 255 caracteres.',
-            'description.required' => 'El campo descripción es obligatorio.',
-            'description.min' => 'El campo descripción requiere minimo 5 caracteres.',
-            'description.max' => 'El campo descripción tiene como limite 255 caracteres.',
-            'contenido.required' => 'El campo de contenido es requerido.',
-            'coorY.required' => 'El campo de coordenada es requerido.',
-            'coorZ.required' => 'El campo de coordenada es requerido.',
-            'slug.required' => 'El campo de la URL es requerido',
-        ]);
-
-        $content = Campa::find($id);
-        $content->name = $request->input('name');
-        $content->date = $request->input('date');
-        $content->description = $request->input('description');
-        $content->contenido = $request->input('contenido');
-        $content->coorY = $request->input('coorY');
-        $content->coorZ = $request->input('coorZ');
-        $content->slug = $request->input('slug');
-        $content->save();
-        
-    }
-
     public function storeImage(Request $request){
 
         if ($request->hasFile('file')) {
@@ -79,37 +45,45 @@ class CampsController extends Controller
 
     }
 
-    public function store(Request $request){
+    public function store(Request $request, $id = null){
 
         $this->validate($request,[
             'name' => 'required|min:3|max:255',
             'description' => 'required|min:5|max:255',
             'coorY' => 'required',
             'coorZ' => 'required',
-            'content' => 'required',
+            'contenido' => 'required',
             'slug' => 'required'
-            ],[
+        ],[
             'name.required' => 'El campo Nombre es obligatorio.',
             'name.min' => 'El campo Nombre requiere minimo 3 caracteres.',
             'name.max' => 'El campo Nombre tiene como limite 255 caracteres.',
             'description.required' => 'El campo descripción es obligatorio.',
             'description.min' => 'El campo descripción requiere minimo 5 caracteres.',
             'description.max' => 'El campo descripción tiene como limite 255 caracteres.',
-            'content.required' => 'El campo de contenido es requerido.',
+            'contenido.required' => 'El campo de contenido es requerido.',
             'coorY.required' => 'El campo de coordenada es requerido.',
             'coorZ.required' => 'El campo de coordenada es requerido.',
             'slug.required' => 'El campo de la URL es requerido',
         ]);
 
-        $content = new Camp;
-        $content->name = $request->input('name');
-        $content->date = $request->input('date');
-        $content->description = $request->input('description');
-        $content->content = $request->input('content');
-        $content->coorY = $request->input('coorY');
-        $content->coorZ = $request->input('coorZ');
-        $content->slug = $request->input('slug');
-        $content->save();
+        if($id != null){
+            $camp = Camp::find($id);
+            if(!$camp){
+                $camp = new Camp;
+            }
+        }else{
+            $camp = new Camp;
+        }
+
+        $camp->name = $request->input('name');
+        $camp->date = $request->input('date');
+        $camp->description = $request->input('description');
+        $camp->content = $request->input('content');
+        $camp->coorY = $request->input('coorY');
+        $camp->coorZ = $request->input('coorZ');
+        $camp->slug = $request->input('slug');
+        $camp->save();
  
     }
 
