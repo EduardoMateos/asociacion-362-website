@@ -2,7 +2,9 @@
 
 @section('content')
 <div class="container container-page">
-    <h1>{{$page->name}}</h1>
+    <div class="text-center">
+        <h1>{{$page->name}}</h1>
+    </div>
     {!!$page->content!!}
 </div>
 @endsection

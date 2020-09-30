@@ -20,8 +20,8 @@ class PageController extends Controller
         if($page){
 
             //seo
-            Seo::setTitle('Prueba');
-            Seo::setDescription('Prueba');
+            Seo::setTitle('Grupo Scout 362 - '.$page->name);
+            Seo::setDescription('Grupo Scout 362 - '.$page->name);
 
             $renderHtml = view('page')
                         ->with('page', $page)

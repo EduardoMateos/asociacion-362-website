@@ -49,7 +49,7 @@ class PageController extends Controller
      * @input Request
      * @return redirect
      */
-    public function store(Request $request, $id){
+    public function store(Request $request, $id = null){
 
         $request->validate([
             'name' => 'required|min:1|max:255',
