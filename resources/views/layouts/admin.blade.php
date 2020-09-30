@@ -84,6 +84,21 @@
                                 </nav>
                             </div>
 
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocs" aria-expanded="false" aria-controls="collapseDocs">
+                                <div class="sb-nav-link-icon"><i class="far fa-comments"></i></div>
+                                Documentación
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseDocs" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link" href="{{route('admin.docs.list')}}">
+                                        Mostrar listado
+                                    </a>
+                                    <a class="nav-link" href="{{route('admin.docs.add')}}">
+                                        Añadir documento
+                                    </a>
+                                </nav>
+                            </div>
 
 
 

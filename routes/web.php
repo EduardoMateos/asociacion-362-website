@@ -19,12 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-Route::get('home', 'HomeController@index')->name('home');
-
 Route::get('campamentos', 'CampsController@show');
-Route::get('{slug}', 'PageController@show')->name('showpage');
 Route::get('campamentos/{slug}', 'CampsController@showCamp')->name('showCamp');
+Route::get('home', 'HomeController@index')->name('home');
+Route::get('{slug}', 'PageController@show')->name('showpage');
+
 
 Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
     
@@ -48,6 +47,11 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
         Route::get('edit/{id}', 'Admin\CampsController@edit')->name('edit');
         Route::post('store/{id?}', 'Admin\CampsController@store')->name('store');
         Route::post('image', 'Admin\CampsController@storeImage')->name('storeImage');
+    });
+
+    Route::group(['prefix' => 'docs', 'as'=>'docs.'], function () {
+        Route::get('', 'Admin\DocsController@list')->name('list');
+        Route::get('add', 'Admin\DocsController@add')->name('add');
     });
 
 });
