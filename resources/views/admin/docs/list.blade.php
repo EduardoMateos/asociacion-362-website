@@ -23,7 +23,7 @@
             </tr>
           </thead>
           <tbody>
-            @forelse ($data as $item)
+            @forelse ($docs as $item)
             <tr>
               <td data-title="ID">{{ $item->id }}</td>
               <td data-title="Nombre">{{ $item->name }}</td>
