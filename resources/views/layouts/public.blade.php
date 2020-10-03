@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ Seo::getTitle() }}</title>
-    <script src="{{ asset('js/app.js?v=2') }}" defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="{{ asset('css/app.css?v=2') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=3') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,5 +20,6 @@
 
         @include('layouts.parts.footer') 
     </div>
+    <script src="{{ asset('js/app.js?v=2') }}" defer></script>
 </body>
 </html>

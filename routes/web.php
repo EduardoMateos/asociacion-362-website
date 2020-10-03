@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('documentacion', 'DocsController@show');
 Route::get('campamentos', 'CampsController@show');
 Route::get('campamentos/{slug}', 'CampsController@showCamp')->name('showCamp');
 Route::get('home', 'HomeController@index')->name('home');
