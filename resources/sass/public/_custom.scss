@@ -16,10 +16,11 @@ body {
 .container-page {
     background-color: white;
     margin:20px;
-    border-radius: 11px 11px 11px 11px;
-    -moz-border-radius: 11px 11px 11px 11px;
-    -webkit-border-radius: 11px 11px 11px 11px;
     border: 0px solid #000000;
     padding:20px;
+    border-top-color: 6px solid #830000;
 }
 
+.container-page h1{
+    margin-bottom: 20px;
+}

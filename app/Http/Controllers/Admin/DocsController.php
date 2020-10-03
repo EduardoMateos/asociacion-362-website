@@ -45,10 +45,8 @@ class DocsController extends Controller
         $fileName   = strtolower(str_replace("-", " ", $request->get('name'))) . '.' . $doc->getClientOriginalExtension();
         Storage::disk('docs')->put($fileName, file_get_contents($doc->getRealPath()));
 
-   
-
         $doc = new Doc;
-        $doc->name = $request->file('doc');
+        $doc->name = $request->get('name');
         $doc->slug = $fileName;
         $doc->save();
 
