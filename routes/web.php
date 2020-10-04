@@ -32,36 +32,41 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
         Route::post('/', 'Admin\AuthController@authcheck')->name('authcheck');
     });
 
-    Route::group(['prefix' => 'home', 'as'=>'home.'], function () {
-        Route::get('/', 'Admin\HomeController@show')->name('show');
+    Route::group(['middleware' => ['auth']], function () { 
+        Route::group(['prefix' => 'home', 'as'=>'home.'], function () {
+            Route::get('/', 'Admin\HomeController@show')->name('show');
+        });
+    
+        Route::group(['prefix' => 'pages', 'as'=>'pages.'], function () {
+            Route::get('', 'Admin\PageController@list')->name('list');
+            Route::get('add', 'Admin\PageController@add')->name('add');
+            Route::get('edit/{id}', 'Admin\PageController@edit')->name('edit');
+            Route::post('store/{id?}', 'Admin\PageController@store')->name('store');
+        });
+    
+        Route::group(['prefix' => 'blocks', 'as'=>'blocks.'], function () {
+            Route::get('', 'Admin\BlocksController@list')->name('list');
+            Route::get('add', 'Admin\BlocksController@add')->name('add');
+            Route::get('edit/{id}', 'Admin\BlocksController@edit')->name('edit');
+            Route::post('store/{id?}', 'Admin\BlocksController@store')->name('store');
+        });
+    
+        Route::group(['prefix' => 'camps', 'as'=>'camps.'], function () {
+            Route::get('', 'Admin\CampsController@list')->name('list');
+            Route::get('add', 'Admin\CampsController@add')->name('add');
+            Route::get('edit/{id}', 'Admin\CampsController@edit')->name('edit');
+            Route::post('store/{id?}', 'Admin\CampsController@store')->name('store');
+            Route::post('image', 'Admin\CampsController@storeImage')->name('storeImage');
+        });
+    
+        Route::group(['prefix' => 'docs', 'as'=>'docs.'], function () {
+            Route::get('', 'Admin\DocsController@list')->name('list');
+            Route::get('add', 'Admin\DocsController@add')->name('add');
+            Route::post('add', 'Admin\DocsController@store')->name('store');
+            Route::get('destroy/{id}', 'Admin\DocsController@destroy')->name('destroy');
+        });
     });
 
-    Route::group(['prefix' => 'pages', 'as'=>'pages.'], function () {
-        Route::get('', 'Admin\PageController@list')->name('list');
-        Route::get('add', 'Admin\PageController@add')->name('add');
-        Route::get('edit/{id}', 'Admin\PageController@edit')->name('edit');
-        Route::post('store/{id?}', 'Admin\PageController@store')->name('store');
-    });
-
-    Route::group(['prefix' => 'blocks', 'as'=>'blocks.'], function () {
-        Route::get('', 'Admin\BlocksController@list')->name('list');
-        Route::get('add', 'Admin\BlocksController@add')->name('add');
-        Route::get('edit/{id}', 'Admin\BlocksController@edit')->name('edit');
-        Route::post('store/{id?}', 'Admin\BlocksController@store')->name('store');
-    });
-
-    Route::group(['prefix' => 'camps', 'as'=>'camps.'], function () {
-        Route::get('', 'Admin\CampsController@list')->name('list');
-        Route::get('add', 'Admin\CampsController@add')->name('add');
-        Route::get('edit/{id}', 'Admin\CampsController@edit')->name('edit');
-        Route::post('store/{id?}', 'Admin\CampsController@store')->name('store');
-        Route::post('image', 'Admin\CampsController@storeImage')->name('storeImage');
-    });
-
-    Route::group(['prefix' => 'docs', 'as'=>'docs.'], function () {
-        Route::get('', 'Admin\DocsController@list')->name('list');
-        Route::get('add', 'Admin\DocsController@add')->name('add');
-        Route::post('add', 'Admin\DocsController@store')->name('store');
-    });
+    
 
 });

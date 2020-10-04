@@ -125,7 +125,7 @@
                 </footer>
             </div>
         </div>
-        <script src="{{ asset('js/admin/app.js?v=5') }}"></script>
+        <script src="{{ asset('js/admin/app.js?v=6') }}"></script>
         @yield('js_custom')
 
         
