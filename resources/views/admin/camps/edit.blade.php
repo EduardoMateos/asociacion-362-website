@@ -60,7 +60,7 @@
       </div>
       <div class="form-group {{ $errors->has('contenido') ? 'has-error' : '' }}">
         <label>Contenido largo</label>
-        <textarea name="contenido" cols="30" rows="10" class="form-control">{{ old('contenido', $data->contenido)}}</textarea>
+        <textarea name="content" cols="30" rows="10" class="form-control">{{ old('contenido', $data->contenido)}}</textarea>
         <span class="text-danger">{{ $errors->first('contenido') }}</span>
       </div>
       <div class="text-center">
