@@ -66,7 +66,6 @@ class PageController extends Controller
             $page = new Page;
         }
 
-        $page = new Page;
         $page->name = $request->name;
         $page->slug = $request->slug;
         $page->content = $request->content;
