@@ -52,7 +52,7 @@ class CampsController extends Controller
             'description' => 'required|min:5|max:255',
             'coorY' => 'required',
             'coorZ' => 'required',
-            'contenido' => 'required',
+            'content' => 'required',
             'slug' => 'required'
         ],[
             'name.required' => 'El campo Nombre es obligatorio.',
@@ -61,7 +61,7 @@ class CampsController extends Controller
             'description.required' => 'El campo descripción es obligatorio.',
             'description.min' => 'El campo descripción requiere minimo 5 caracteres.',
             'description.max' => 'El campo descripción tiene como limite 255 caracteres.',
-            'contenido.required' => 'El campo de contenido es requerido.',
+            'content.required' => 'El campo de contenido es requerido.',
             'coorY.required' => 'El campo de coordenada es requerido.',
             'coorZ.required' => 'El campo de coordenada es requerido.',
             'slug.required' => 'El campo de la URL es requerido',
@@ -84,6 +84,8 @@ class CampsController extends Controller
         $camp->coorZ = $request->input('coorZ');
         $camp->slug = $request->input('slug');
         $camp->save();
+
+        return redirect()->route('admin.camps.list')->with('status', 'Cambios guardados.');
  
     }
 

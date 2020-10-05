@@ -59,7 +59,7 @@ class PageController extends Controller
 
         if($id != null){
             $page = Page::find($id);
-            if(!$block){
+            if(!$page){
                 $page = new Page;
             }
         }else{
