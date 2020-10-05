@@ -40,8 +40,13 @@
         <script>
             tinymce.init({
                 selector:'textarea.content',
-                width: 900,
-                height: 300
+                plugins: [
+                    'image imagetools',
+                    'code'
+                ],
+                toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code',
+                width: '100%',
+                height: 600
             });
         </script>
 

@@ -74,11 +74,13 @@
 <script>
     tinymce.init({
         selector: 'textarea',
-        height: 300,
+        height: 600,
+        width: '100%',
         plugins: [
-            'image imagetools'
+            'image imagetools',
+            'code'
         ],
-        toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        toolbar1: 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | code',
         file_picker_types: 'image',
         images_upload_handler: function (blobInfo, success, failure) {
           var xhr, formData;

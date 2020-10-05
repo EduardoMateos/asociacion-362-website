@@ -37,7 +37,7 @@
                             <div class="sb-sidenav-menu-heading">Website</div>
                            
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="far fa-comments"></i></div>
+                                <div class="sb-nav-link-icon"><i class="far fa-file"></i></div>
                                 Paginas
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -53,7 +53,7 @@
                             </div>
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlocks" aria-expanded="false" aria-controls="collapseBlocks">
-                                <div class="sb-nav-link-icon"><i class="far fa-comments"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-cubes"></i></div>
                                 Bloques
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -69,7 +69,7 @@
                             </div>
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCamps" aria-expanded="false" aria-controls="collapseCamps">
-                                <div class="sb-nav-link-icon"><i class="far fa-comments"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-campground"></i></div>
                                 Campateca
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
@@ -85,7 +85,7 @@
                             </div>
 
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDocs" aria-expanded="false" aria-controls="collapseDocs">
-                                <div class="sb-nav-link-icon"><i class="far fa-comments"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Documentación
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
