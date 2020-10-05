@@ -1,6 +1,7 @@
 require('jquery');
 require('./bootstrap');
-require('sweetalert2');
+require('./docs.js');
+require('./camps.js');
 
 (function($) {
     "use strict";
