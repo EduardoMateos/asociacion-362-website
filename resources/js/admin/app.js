@@ -1,5 +1,6 @@
 require('jquery');
 require('./bootstrap');
+require('sweetalert2');
 
 (function($) {
     "use strict";

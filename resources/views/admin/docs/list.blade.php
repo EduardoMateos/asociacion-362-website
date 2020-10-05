@@ -29,8 +29,7 @@
               <td data-title="Nombre">{{ $item->name }}</td>
               <td data-title="Ubicación">{{ $item->slug }}</td>
               <td data-title="Acción">
-                <a href="{{ route('admin.camps.edit',$item->id) }}" class="btn btn-info">Editar</a>
-                <button onclick="changeLink({{ $item->id }})" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-danger">Eliminar</a>
+                <button type="button" data-toggle="modal" class="btn btn-danger delete-doc">Eliminar</a>
               </td>
             </tr>
             @empty
@@ -45,4 +44,34 @@
   </div>
 
 
+@endsection
+
+@section('js_custom')
+<script>
+  $(".delete-doc").click(function() {
+    Swal.fire({
+      title: '¿Estas seguro?',
+      text: 'El documento no se podra recuperar',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, eliminalo.',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'Your imaginary file has been deleted.',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    })
+  });
+
+</script>
 @endsection

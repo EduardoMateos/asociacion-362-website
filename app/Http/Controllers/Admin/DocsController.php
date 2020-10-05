@@ -53,5 +53,10 @@ class DocsController extends Controller
         return redirect()->route('admin.docs.list')->with('Documento agregado correctamente.');
     }
 
+    public function destroy($id){
+        Doc::destroy($id);
+        return redirect()->route('admin.docs.list')->with('Documento eliminado correctamente.');
+    }
+
 
 }
