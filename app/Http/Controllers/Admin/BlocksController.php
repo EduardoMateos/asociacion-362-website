@@ -77,4 +77,9 @@ class BlocksController extends Controller
 
         return redirect()->route('admin.blocks.list');
     }
+
+    public function destroy($id){
+        Block::destroy($id);
+        return redirect()->route('admin.blocks.list');
+    }
 }

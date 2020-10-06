@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ Seo::getTitle() }}</title>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="{{ asset('css/app.css?v=3') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=4') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
 <body>

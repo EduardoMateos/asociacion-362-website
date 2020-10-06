@@ -8,8 +8,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - Admin SC</title>
-        <link href="{{ asset('css/admin/app.css?v=8') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+        <link href="{{ asset('css/admin/app.css?v=10') }}" rel="stylesheet">
     </head>
     <body class="sb-nav-fixed" > 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -125,7 +124,7 @@
                 </footer>
             </div>
         </div>
-        <script src="{{ asset('js/admin/app.js?v=6') }}"></script>
+        <script src="{{ asset('js/admin/app.js?v=7') }}"></script>
         @yield('js_custom')
 
         
