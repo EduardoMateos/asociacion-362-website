@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
             Route::get('add', 'Admin\BlocksController@add')->name('add');
             Route::get('edit/{id}', 'Admin\BlocksController@edit')->name('edit');
             Route::post('store/{id?}', 'Admin\BlocksController@store')->name('store');
+            Route::get('destroy/{id}', 'Admin\BlocksController@destroy')->name('destroy');
         });
     
         Route::group(['prefix' => 'camps', 'as'=>'camps.'], function () {

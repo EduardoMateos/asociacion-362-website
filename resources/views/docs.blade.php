@@ -3,18 +3,11 @@
 @section('content')
 <div class="container container-page">
     <h1 class="text-center">Documentación</h1>
-    <table class="table">
-    <thead>
-        <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descarga</th>
-        </tr>
-    </thead>
+    Aquí podras encontrar toda la documentación necesaria a rellenar.
+    <table class="table mt-2">
     <tbody>
         @forelse ($docs as $key=>$doc)
         <tr>
-            <th scope="row">{{ $key }}</th>
             <td>{{ $doc->name }}</td>
             <td>
                 <a href="/storage/docs/{{ $doc->slug }}" target="_blank" class="btn btn-success">

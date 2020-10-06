@@ -1,7 +1,11 @@
 require('jquery');
 require('./bootstrap');
+//custom
+require('./blocks.js');
 require('./docs.js');
 require('./camps.js');
+//fontawesome
+require ('@fortawesome/fontawesome-free');
 
 (function($) {
     "use strict";

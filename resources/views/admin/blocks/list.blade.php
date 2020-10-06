@@ -27,7 +27,10 @@
 					<tr>
                         <th scope="row">{{$block->id}}</th>
                         <td>{{$block->name}}</td>
-                        <td><a href="{{ route('admin.blocks.edit', $block->id) }}" class="btn btn-primary">Editar</a></td>
+                        <td>
+							<a href="{{ route('admin.blocks.edit', $block->id) }}" class="btn btn-primary">Editar</a>
+							<button type="button" data-id="{{ $block->id }}" class="btn btn-danger delete-block">Eliminar</a>
+						</td>
 					</tr>
 					@empty
                     <tr>
