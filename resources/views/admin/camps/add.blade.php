@@ -41,9 +41,9 @@
                       <input type="text" name="description" class="form-control" value="{{ old('description') }}">
                       <span class="text-danger">{{ $errors->first('description') }}</span>
                     </div>
-                    <div class="form-group {{ $errors->has('contenido') ? 'has-error' : '' }}">
+                    <div class="form-group {{ $errors->has('content') ? 'has-error' : '' }}">
                       <label>Contenido largo</label>
-                      <textarea name="contenido" cols="30" rows="10" class="form-control content">{{ old('contenido')}}</textarea>
+                      <textarea name="content" cols="30" rows="10" class="form-control content">{{ old('contenido')}}</textarea>
                       <span class="text-danger">{{ $errors->first('content') }}</span>
                     </div>
                     <div class="text-center">
