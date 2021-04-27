@@ -2,8 +2,6 @@
 
 ## Sobre la web
 
-Autor: Eduardo Mateos Soto
-Linkedin: https://www.linkedin.com/in/eduardo-mateos-soto/
 Web creada para una asociación juvenil de Madrid. 
 
 El backoffice esta en "/admin", desde ahi puedes:

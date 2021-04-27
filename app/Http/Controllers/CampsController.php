@@ -14,7 +14,8 @@ class CampsController extends Controller
         return view('camps')->with('data', $content);
     }
 
-    public function showCamp(){
-        
+    public function showCamp($slug){
+        $content = Camp::where('slug', $slug)->first();
+        return view('camp')->with('data', $content);
     }
 }

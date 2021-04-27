@@ -23,8 +23,6 @@ Route::get('campamentos/{slug}', 'CampsController@showCamp')->name('showCamp');
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('{slug}', 'PageController@show')->name('showpage');
 
-
-
 Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
 
     Route::group(['prefix' => 'login', 'as'=>'login.'], function () {
